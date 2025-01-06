@@ -1,0 +1,28 @@
+ # Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependency directories
+jspm_packages/
+
+# Build output
+/dist
+/build
+
+# .env file (do not push environment variables)
+.env
+
+# MacOS files
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+
+# Optional: Ignore build artifacts for production
+*.tgz
+*.gz
