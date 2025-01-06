@@ -11,6 +11,7 @@ export const protectRoute = async (req, res, next) => {
     next();
   } catch (error) {
     console.log("Error while access to protedted routed", error);
+    next(error);
   }
 };
 
@@ -28,6 +29,6 @@ export const requireAdmin = async (req, res, next) => {
     next();
   } catch (error) {
     console.log("Error for admin access", error);
-    return res.status(500).json({ message: "Internal Server Error!" });
+    next(error);
   }
 };
