@@ -42,10 +42,19 @@ app.use("/api/stats", statsRoutes);
 // Error handling
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ message: process.env.NODE_ENV === "development" ? err.message : "Internal Server Error!" });
+  res
+    .status(500)
+    .json({
+      message:
+        process.env.NODE_ENV === "development"
+          ? err.message
+          : "Internal Server Error!",
+    });
 });
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
   connectDB();
 });
+
+// TODO: socket.io
