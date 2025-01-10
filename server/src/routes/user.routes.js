@@ -1,10 +1,9 @@
-import { Router } from "express";
-import { protectRoute } from "../middlewares/auth.middlewares.js";
-import { getAllUsers } from "../controllers/user.controllers.js";
+ import { Router } from "express";
+ import { protectRoute } from "../middlewares/auth.middlewares.js";
+ import { getAllUsers, getMessages } from "../controllers/user.controllers.js";
+ const router = Router();
 
-const router = Router();
+ router.get("/", protectRoute, getAllUsers);
+ router.get("/messages/:userId", protectRoute, getMessages);
 
-router.get("/", protectRoute, getAllUsers);
-// TODO: getMessages
-
-export default router;
+ export default router;
