@@ -53,7 +53,7 @@ export const useChatStore = create<ChatStore>((set, get) => ({
 			set({ isLoading: false });
 		}
 	},
-
+	
 	initSocket: (userId) => {
 		if (!get().isConnected) {
 			socket.auth = { userId };

@@ -127,8 +127,8 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
     }
   },
 }));
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 function emitActivity(arg0: string) {
   throw new Error("Function not implemented.");
+  console.log(arg0);
 }
-
